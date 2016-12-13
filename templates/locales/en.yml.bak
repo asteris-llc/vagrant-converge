@@ -1,0 +1,19 @@
+---
+
+en:
+  converge:
+    provisioners:
+      converge:
+        errors:
+          converge_not_found_on_guest: |-
+            Converge not found on guest
+  vagrant:
+    provisioners:
+      converge:
+        cannot_detect: |-
+          Vagrant does not support detecting whether Converge is installed
+          for the guest OS running in the machine. Vagrant will assume it is
+          installed and attempt to continue.
+        errors:
+          converge_not_found_on_guest: |-
+            Converge not found on guest

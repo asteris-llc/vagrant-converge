@@ -1,0 +1,22 @@
+---
+
+en:
+  vagrant:
+    provisioners:
+      converge:
+        cannot_detect: |-
+          Vagrant does not support detecting whether Converge is installed
+          for the guest OS running in the machine. Vagrant will assume it is
+          installed and attempt to continue.
+        errors:
+          converge_not_found_on_guest: |-
+            Converge not found on guest
+          converge_command_failed: |-
+            Converge execution failed
+        invalid_hcl: |-
+          `hcl` must be an array or a path to an existing file. Received: %{value} (as %{type})
+        invalid_params: |-
+          `params` must be a hash of param/value pairs. Recevied: %{value} (as %{type})
+        no_hcl: |-
+          No value provided for hcl
+        running: Running converge...

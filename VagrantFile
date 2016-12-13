@@ -1,0 +1,21 @@
+Vagrant.configure(2) do |config|
+  config.vm.box = "centos/7"
+#  config.vm.box = "bento/freebsd-10.3"
+
+#  config.vm.provider :virtualbox do |vb|
+#    vb.customize ["modifyvm", :id, "--cpus", "4"]
+#    vb.customize ["modifyvm", :id, "--memory", "8192"]
+#  end
+
+  config.vm.provision :converge do |foo|
+    foo.params = {
+	"message" => "Not the default"
+    }
+    foo.hcl = [
+	"https://bintray.com/chrisaubuchon/generic/download_file?file_path=test.hcl"
+    ]
+    foo.install = true
+    foo.verbose = true
+    foo.version = "0.2.0-beta1"
+  end
+end
